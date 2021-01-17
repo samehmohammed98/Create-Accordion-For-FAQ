@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Vue Calculate Product</title>
+</head>
+<body>
+  <div id="vue-test" class="container" >
+
+    <div class="question-box" v-for='question in questions'>
+
+      <h3 @click='question.open = !question.open'> {{ question.title }} </h3>
+
+      <div class="question-reply" v-show='question.open'>
+
+        <p v-text='question.reply'></p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/vue.js"></script>
+  <script>
+
+    var questions = {
+      "Question One": {
+        open: true,
+        title: 'One: What Happen When Bla Bla Bla',
+        reply: "You Can Do What You Want Bla Bla Bla"
+      },
+      "Question Two": {
+        open: false,
+        title: 'One: What Happen When Bla Bla Bla',
+        reply: "You Can Do What You Want Bla Bla Bla"
+      },
+      "Question Three": {
+        open: false,
+        title: 'One: What Happen When Bla Bla Bla',
+        reply: "You Can Do What You Want Bla Bla Bla"
+      },
+      "Question Four": {
+        open: false,
+        title: 'One: What Happen When Bla Bla Bla',
+        reply: "You Can Do What You Want Bla Bla Bla"
+      },
+      "Question Five": {
+        open: false,
+        title: 'One: What Happen When Bla Bla Bla',
+        reply: "You Can Do What You Want Bla Bla Bla"
+      },
+    }
+
+    var app = new Vue({
+      el: '#vue-test',
+      data: {
+        questions: questions
+      }
+    });
+  </script>
+</body>
+</html>
